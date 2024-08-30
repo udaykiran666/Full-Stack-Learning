@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 app.use(express.json());
+app.use(cors());
 
 const {CreateToDo} = require("../backend/db/index");
 const {create_todo_schema, get_todo_schema} = require("./zod-typs");
@@ -13,6 +15,7 @@ function middleware(req, res, next){
 }
 
 app.post("/todo", middleware, async (req, res)=>{
+    console.log("req.body : ", req.body);
     const createPayload = create_todo_schema.safeParse(req.body);
     if (!createPayload.success) {
         return res.status(400).json(createPayload.error);
