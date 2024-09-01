@@ -15,7 +15,6 @@ function middleware(req, res, next){
 }
 
 app.post("/todo", middleware, async (req, res)=>{
-    console.log("req.body : ", req.body);
     const createPayload = create_todo_schema.safeParse(req.body);
     if (!createPayload.success) {
         return res.status(400).json(createPayload.error);
@@ -26,14 +25,23 @@ app.post("/todo", middleware, async (req, res)=>{
     res.status(201).json({msg:"To-Do created"});
 });
 
-app.get("/todos", middleware, async (req, res)=>{
+app.get("/todos/:id", middleware, async (req, res)=>{
+    const id = req.params.id;
+    if (id){
+        // Fetch todo by id
+        const todo = await CreateToDo.findById({_id:id});
+        if (!todo) {
+            return res.status(404).json({msg: "To-Do not found"});
+        }
+        res.status(200).json(todo);
+        return;
+    }
+    else{
     // Fetch all todos
     const todos = await CreateToDo.find({});
     
     res.status(200).json(todos);
-})
-
-
+}})
 app.put("/completed", middleware, async (req, res)=>{
     // Mark todo as completed
     const updatePayload = get_todo_schema.safeParse(req.body);

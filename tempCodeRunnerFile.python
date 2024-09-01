@@ -1,0 +1,10 @@
+class Uday():
+    def __init__(self, name , age):
+        self.name=name
+        self.age=age
+    
+    def introduce(self):
+        return "Hi My Name is {} and My Age is {}".format(self.name, self.age)
+    
+uday=Uday('uday',23)
+print(uday.introduce())
