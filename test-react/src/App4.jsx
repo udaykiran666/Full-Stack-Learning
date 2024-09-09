@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 // Use useMemo to ensure that the calculation is only recomputed when the input changes, not on every render.
 
 export function Assignment1() {
-    const [input, setInput] = useState(0);
+    const [input, setInput] = useState('');
     // Your solution starts here
     const expensiveValue=useMemo(()=>{
         if (input<0) return "Inavlid Input"
@@ -18,10 +18,11 @@ export function Assignment1() {
     return (
         <div>
             <input 
-                type="number" 
-                value={input} 
-                onChange={(e) => setInput(Number(e.target.value))} 
-            />
+                type="number"
+                value={input}   
+                onChange={(event)=>{
+                    setInput(event.target.value)
+                }}/><br></br>
             <p>Calculated Value: {expensiveValue}</p>
         </div>
     );
