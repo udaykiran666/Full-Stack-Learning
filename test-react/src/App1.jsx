@@ -20,7 +20,6 @@ export const Task=()=>{
             placeholder="Enter the number"
             value={inputnumber}
             onChange={(event)=>{
-                console.log()
                 setinputnumber(event.target.value)
             }}/><br></br>
             <h3>The sum from 0 to {inputnumber} is {count}</h3><br></br>
