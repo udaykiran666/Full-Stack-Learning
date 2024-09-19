@@ -1,31 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>UI from HS</title>
+        <link rel="stylesheet" href="index.css" type="text/css"/>
+        <script src="index.js"></script>
     </head>
     <body>
-        <input oninput="delay_api_calls()" id="firstnumber" type="text" placeholder="Enter Value"><br><br>
-        <input oninput="delay_api_calls()" id="secondnumber" type="text" placeholder="Enter Value"><br><br>
-        <div id="finalsum"></div>
+        <div class="container">
+        <img id="image1" src="https://st2.depositphotos.com/3591429/5245/i/600/depositphotos_52453715-stock-photo-hands-holding-word-welcome.jpg" alt="Welcome Image 1">
+        <img id="image2" src="https://thumbs.dreamstime.com/b/welcome-word-welcome-english-alphabet-colors-rainbow-balloons-white-background-holidays-education-132610316.jpg" alt="Welcome Image 2">
+        </div>
+        <div>
+            <button id="submitBtn" onclick="resizeImages()">Submit</button>
+        </div>
     </body>
-    <script>
-        let timeout;
-        const populatemethod = (()=>{
-            const a = document.getElementById("firstnumber").value;
-            const b = document.getElementById("secondnumber").value;
-            fetch_method(a,b)
-        })
-        const fetch_method = async (a,b)=>{
-                const response = await fetch ("https://sum-server.100xdevs.com/sum?a=" + a + "&b="+ b);
-                const data = await response.text();
-                document.getElementById("finalsum").innerHTML = data;
-
-        }
-        const delay_api_calls = ()=>{
-            clearTimeout(timeout);  // clear any existing timeouts before setting a new one.
-            timeout = setTimeout(()=>{
-                populatemethod();
-            },2000);
-        }
-    </script>
 </html>

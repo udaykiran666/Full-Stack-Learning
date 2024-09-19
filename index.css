@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Changed from center to flex-start */
+}
+
+button {
+    background: #08c;
+    text-align: center;
+    cursor: pointer;
+    appearance: none;
+    opacity: .99;
+    width: 120px;
+    height: 30px;
+    border-radius: 4px;
+    color: #eee;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}

@@ -53,8 +53,6 @@ const CountDisplay=memo(()=>{
 
 function Buttons(){
   const {handleIncrement, handleDecrement} = useContext(CountContext);
-  console.log(handleDecrement)
-  console.log(handleIncrement)
   return(
     <div>
     <button onClick={
