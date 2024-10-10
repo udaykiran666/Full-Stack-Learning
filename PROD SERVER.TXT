@@ -1,0 +1,39 @@
+After running `npm run build`, your production files are generated in the `dist` directory. To see your production build, you need to serve the files from that directory.
+
+### Steps to View Your Production Server:
+
+1. **Navigate to the `dist` Directory**:
+   ```bash
+   cd dist
+   ```
+
+2. **Serve the Files**:
+   You can serve the files using a simple HTTP server. If you don't have a server installed, you can quickly use `serve` or `http-server`. Here’s how to use both:
+
+   **Using `serve`**:
+   - First, install it globally (if you haven't already):
+     ```bash
+     npm install -g serve
+     ```
+   - Then, run:
+     ```bash
+     serve
+     ```
+   - This will serve your files, and it will provide you a URL (usually `http://localhost:5000`) to view your app.
+
+   **Using `http-server`**:
+   - First, install it globally (if you haven't already):
+     ```bash
+     npm install -g http-server
+     ```
+   - Then, run:
+     ```bash
+     http-server
+     ```
+   - This will also serve your files, typically at `http://localhost:8080`.
+
+3. **Open in Browser**:
+   - Open your web browser and navigate to the provided URL (e.g., `http://localhost:5000` or `http://localhost:8080`) to see your production build.
+
+### Note:
+- If you're deploying this to a remote server or cloud service, you'd typically upload the contents of the `dist` directory to your hosting service's web root directory, and then access it via your domain or IP address. 
