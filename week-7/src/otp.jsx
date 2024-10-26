@@ -54,6 +54,7 @@ function App(){
             ):(
                 <div>
                     <div>
+               
                     {otp.map((data, index)=>(
                             <input
                         key={index}
