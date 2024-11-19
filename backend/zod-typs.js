@@ -1,4 +1,4 @@
-const zod = require("zod");
+const {zod} = require("zod");
 
 const create_todo_schema = zod.object({
     title: zod.string().min(5),
