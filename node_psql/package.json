@@ -1,0 +1,17 @@
+{
+  "name": "node_psql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc -b"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/pg": "^8.11.10",
+    "pg": "^8.13.1",
+    "typescript": "^5.7.2"
+  }
+}
