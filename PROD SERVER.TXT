@@ -1,4 +1,6 @@
-After running `npm run build`, your production files are generated in the `dist` directory. To see your production build, you need to serve the files from that directory.
+django projetcst - https://chatgpt.com/share/67572d52-8250-8003-8310-50dedb7394aa
+
+//After running `npm run build`, your production files are generated in the `dist` directory. To see your production build, you need to serve the files from that directory.
 
 ### Steps to View Your Production Server:
 
