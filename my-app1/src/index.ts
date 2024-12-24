@@ -7,7 +7,9 @@ async function authMiddleware(c:any, next:any){
   if(!token){
     return c.json({message: "Unauthorized"})
   }
-  return next()
+  else{
+    return next();
+  }
 }
 app.get('/', authMiddleware, async(c) => {
   const body = await c.req.json();
